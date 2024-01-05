@@ -1,0 +1,55 @@
+.blank-div {
+  height: 50vh;
+}
+.blank-left {
+    height: 40vh;
+}
+.left {
+    margin-top: auto
+}
+h1 {
+    font-size: 34pt;
+}
+h2 {
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 40pt;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 5px
+}
+
+p {
+    font-size: 20pt;
+}
+a {
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+.listed {
+    display:flex;
+    flex-direction: column;
+}
+
+.pfp {
+    background: url("https://avatars.githubusercontent.com/u/34946446?v=4");
+    background-size: 150px;
+    border-radius: 10px;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.project {
+    margin-bottom: 100px;
+}
+
+.bolded {
+    padding-top: 40px;
+    font-weight: bold;
+}
