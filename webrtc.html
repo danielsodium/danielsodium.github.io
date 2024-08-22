@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="content">
+      <a href="blog">All Posts</a>
+      <h1>Setting up WebRTC AndroidVOIP</h1>
+<p></p>
+<p>These are the steps I took to setup my development environment for WebRTC Android Native development.</p>
+<p></p>
+<h2>Prerequisites</h2>
+<p>Clone the depot_tools into your home directory.</p>
+<p><code>git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git</code></p>
+<p></p>
+<p>Then add to your <code>.bashrc</code></p>
+<p><code>export PATH=/path/to/depot_tools:$PATH</code></p>
+<p></p>
+<h2>Getting WebRTC</h2>
+<p>Create a directory to store the webrtc source code (or just clone into your home directory like me). This cloned directory will be referred to as <code>src</code> in a lot of WebRTC documentation.</p>
+<p><code>fetch --nohooks webrtc_android</code></p>
+<p></p>
+<p>then sync with gclient (I have no clue what this does)</p>
+<p><code>gclient sync</code></p>
+<p></p>
+<p>now <code>cd</code> into the newly created directory</p>
+<p><code>cd src</code></p>
+<p></p>
+<h2>Start Developing</h2>
+<p>Every time you start a terminal session, run this in <code>src</code></p>
+<p><code>./build/install-build-deps.sh</code></p>
+<p></p>
+<p>This will give you access to adb which is needed to run android.</p>
+<p></p>
+<h2>Building</h2>
+<p>To build the project, run</p>
+<p><code>gn gen out/Debug --args='target_os="android" target_cpu="x64"'</code></p>
+<p><code>ninja -C out/Default AppRTCMobile</code></p>
+<p></p>
+<p>This will take more than a few minutes, and the newly created files will be in <code>out/Default</code>.</p>
+<p></p>
+<h2>Testing</h2>
+<p>Currently, Android Studio doesn't work, but we can still take advantage of Android Studio's Virtual Device Manager to emulate a android device.</p>
+<p></p>
+<p>The default emulation device will not work, citing a APK version discrepency. This can be resolved by editing one of the adb flags, but the app will crash due to an older version of apk even if this error is ignored. </p>
+<p></p>
+<p>To resolve this, create a new device of any size, and for the system image, go under "recommended" and select "Tiramisu" which has API 33, ABI x86_64, and Android 13.0 (Google Play). Install and launch this device.</p>
+<p></p>
+<p>Then run to deploy the app.</p>
+<p><code>adb install -r out/Default/apks/androidvoip.apk</code></p>
+<p></p>
+<p>The app will not automatically run, instead swipe up on the home screen to find the "androidvoip" app and click to run.</p>
+<p></p>
+<h2>Editing</h2>
+<p>To setup clangd, we can make use of <code>compile_commands.json</code>. In <code>src</code> run</p>
+<p><code>gn gen out/Default --export-compile-commands</code></p>
+<p></p>
+<p>Then add as a compile command in whatever editor you use</p>
+<p><code>--compile-commands-dir=/home/daniel/src/out/Default</code></p>
+<p></p>
+<p>and you should be good to go.</p>
+
+    </div>
+  </body>
+</html>
+
