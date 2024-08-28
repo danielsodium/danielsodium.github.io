@@ -32,14 +32,14 @@
 <p></p>
 <h2>Start Developing</h2>
 <p>Every time you start a terminal session, run this in <code>src</code></p>
-<p><code>./build/install-build-deps.sh</code></p>
+<p><code>. build/android/envsetup.sh</code></p>
 <p></p>
 <p>This will give you access to adb which is needed to run android.</p>
 <p></p>
 <h2>Building</h2>
 <p>To build the project, run</p>
-<p><code>gn gen out/Debug --args='target_os="android" target_cpu="x64"'</code></p>
-<p><code>ninja -C out/Default AppRTCMobile</code></p>
+<p><code>gn gen out/Default --args='target_os="android" target_cpu="x64"'</code></p>
+<p><code>ninja -C out/Default androidvoip</code></p>
 <p></p>
 <p>This will take more than a few minutes, and the newly created files will be in <code>out/Default</code>.</p>
 <p></p>
