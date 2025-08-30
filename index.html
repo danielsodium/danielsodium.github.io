@@ -1,27 +1,44 @@
 <!doctype html>
 <html>
 
-<head>
+  <head>
     <title>Daniel Na</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+    <style>
+          * {
+            font-family: "monospace";
+          }
+         .box {
+           margin: 10%;
+         }
+        a {
+          text-decoration: none;
+          color: inherit;
+          background-image: linear-gradient(to right, transparent 50%, #ade5ed 50%);
+          background-size: 200% 100%;
+          background-position: 0 0;
+          transition: background-position 0.5s ease-out;
+          marign: 0px;
+        }
 
-<body>
+        a:hover {
+          background-position: -100% 0; /* slides the highlight in */
+        }
+    </style>
+  </head>
+
+  <body>
     <div class="container">
-        <div class="box">
-            <h1>Hi, I'm Daniel Na.</h1>
-            <h2>I'm currently on my final semester studying computer science at Rensselaer Polytechnic Institute.</h2>
-            <h2>Currently looking for an<span class="highlight"> internship for summer 2025.</span></h2>
-            <div class="links">
-                <a href="https://github.com/danielsodium">Github</a> |
-                <a href="https://drive.google.com/file/d/1YEwpvF0eJETDE7H1ErwR6ORJ5ggKQ3Zm/view?usp=sharing">Resume</a> | 
-                <a href="mailto:element11sodium@gmail.com">Email</a> | 
-                <a href="https://www.linkedin.com/in/danielsodium/">Linkedin</a> |
-                <a href="blog">Blog</a>
-            </div>
-            <h2></h2>
+      <div class="box">
+        <p>Hi, I'm Daniel Na.</p>
+        <p>I'm currently a software engineer at <span class="highlight">V2X Inc</span>, always excited to learn and take on new software projects. Outside of work you'll probably find me touching grass. Currently on a lifelong pursuit of learning, growing, and fast software that don't take forever to load. </p><p>Feel free to reach out to me on any of my socials below. unless you're a spammer >:(</p>
+        <div class="links">
+          <p>
+          <a href="https://drive.google.com/file/d/1Absll3xsLB8AQ-9d96rh0NysArrsWyNS/preview">Resume </a>|<a href="https://github.com/danielsodium"> Github </a>|<a href="mailto:element11sodium@gmail.com"> Email </a>|<a href="https://www.linkedin.com/in/danielsodium/"> Linkedin </a>
+          </p>
         </div>
+        <h2></h2>
+      </div>
     </div>
-</body>
+  </body>
 
 </html>
